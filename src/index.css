@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid #d5dbea;
+    border-radius: 8px;
+    padding: 10px 12px;
+    outline: none;
+    background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2563eb;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.auth-card form button {
+    margin-top: 5px;
+}
+
+.auth-card p {
+    text-align: center;
+    color: #667085;
+}
+
+.auth-card a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.error {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.dashboard {
+    min-height: 100vh;
+    padding: 35px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.workspace-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.workspace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.workspace-card,
+.board-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e4e7ec;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.board-page {
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.task-form {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px solid #e4e7ec;
+}
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.kanban-column {
+    background: #e9edf5;
+    padding: 18px;
+    border-radius: 12px;
+    min-height: 450px;
+}
+
+.kanban-column h2 {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.task-card {
+    background: white;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 1px solid #e1e5ee;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.task-card p {
+    color: #667085;
+    font-size: 14px;
+}
+
+.task-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.task-actions button:last-child {
+    background: #dc2626;
+}
+
+@media (max-width: 800px) {
+    .kanban-board {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard,
+    .board-page {
+        padding: 20px;
+    }
+
+    .workspace-form,
+    .task-form {
+        flex-direction: column;
+    }
+
+    .dashboard-header,
+    .board-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
